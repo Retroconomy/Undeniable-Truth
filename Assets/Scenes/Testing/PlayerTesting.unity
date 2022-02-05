@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 267542231}
   - component: {fileID: 267542230}
   - component: {fileID: 267542235}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TempPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 6
-  JumpForce: 3
+  JumpForce: 7
 --- !u!1 &1338764168
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 1703426122}
   - component: {fileID: 1703426121}
   - component: {fileID: 1703426120}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TempPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}

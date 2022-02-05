@@ -8,12 +8,12 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Ground
+  - Enemy
+  - Interactable
   - 
   - 
   - 
@@ -41,6 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: WorldConfiner
+    uniqueID: 4223877077
+    locked: 0
+  - name: Background
+    uniqueID: 1692159361
+    locked: 0
+  - name: Decor
+    uniqueID: 565742655
+    locked: 0
   - name: Player
     uniqueID: 3343609337
+    locked: 0
+  - name: Foreground
+    uniqueID: 2986459775
     locked: 0

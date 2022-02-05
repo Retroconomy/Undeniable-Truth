@@ -41,7 +41,7 @@ public class Player_Controller : MonoBehaviour
         {
             //Usual Player code here
             PlayerMovement();
-
+            PlayerJump();
         }
         
     }
@@ -54,6 +54,18 @@ public class Player_Controller : MonoBehaviour
         RigBod.velocity = new Vector2(HorizInput * MoveSpeed, RigBod.velocity.y);
         //Change Animation to Running Here
         //Flip Sprite based on Direction Here
+    }
+    //Jump Function
+    private void PlayerJump()
+    {
+        //Grab Input and check if player is on the ground
+        bool PressedJump = Input.GetButtonDown("Jump");
+        bool IsGrounded = CapColl.IsTouchingLayers(LayerMask.GetMask("Ground"));
+        if(PressedJump && IsGrounded)
+        {
+            RigBod.velocity = new Vector2(RigBod.velocity.x, JumpForce);
+            //Eventually Change Animation and PlayOneShot jump SFX Here
+        }
     }
 
 
