@@ -52,9 +52,26 @@ public class Player_Controller : MonoBehaviour
         //Grab Input and store Floats and Bools
         float HorizInput = Input.GetAxis("Horizontal");
         RigBod.velocity = new Vector2(HorizInput * MoveSpeed, RigBod.velocity.y);
-        //Change Animation to Running Here
-        //Flip Sprite based on Direction Here
+        ChangeAnimToRun();
+        FlipSprite();
+        }
+    //Running Animation Function
+    private void FlipSprite()
+    {
+        bool IsRunning = Mathf.Abs(RigBod.velocity.x) >= Mathf.Epsilon;
+        if (IsRunning)
+        {
+            transform.localScale = new Vector2(Mathf.Sign(RigBod.velocity.x), 1f);
+        }
     }
+    private void ChangeAnimToRun()
+    {
+        bool IsRunning = Mathf.Abs(RigBod.velocity.x) >= Mathf.Epsilon;
+        PlayerAnim.SetBool("IsRunning", IsRunning);
+    }
+
+
+
     //Jump Function
     private void PlayerJump()
     {
