@@ -14,7 +14,7 @@ public class Player_Controller : MonoBehaviour
 
     //Private Vars
     private bool IsHurt = false;
-
+    private bool InAir = false;
     //Editor Inspector Variables
     [SerializeField] float MoveSpeed, JumpForce;
 
@@ -70,8 +70,6 @@ public class Player_Controller : MonoBehaviour
         PlayerAnim.SetBool("IsRunning", IsRunning);
     }
 
-
-
     //Jump Function
     private void PlayerJump()
     {
@@ -81,12 +79,15 @@ public class Player_Controller : MonoBehaviour
         if(PressedJump && IsGrounded)
         {
             RigBod.velocity = new Vector2(RigBod.velocity.x, JumpForce);
-            //Eventually Change Animation and PlayOneShot jump SFX Here
+            
         }
+        ChangeAnimToJump();
     }
-
-
-
+    private void ChangeAnimToJump()
+    {
+        bool IsVert = Mathf.Abs(RigBod.velocity.y) > 0.005;
+        PlayerAnim.SetBool("Jumped", IsVert);
+    }
 
 
 
